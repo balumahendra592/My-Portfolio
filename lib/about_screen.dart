@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 class AboutScreen extends StatefulWidget {
   @override
   _AboutScreenState createState() => _AboutScreenState();
@@ -43,7 +43,7 @@ class _AboutScreenState extends State<AboutScreen> {
                       color: Colors.white,
                       fontWeight: FontWeight.w900),
                   text: const [
-                    "About Me"
+                    "Work Experience"
                   ],
                 ),
               ],
@@ -87,6 +87,93 @@ class _AboutScreenState extends State<AboutScreen> {
                 color: Colors.white,
                 fontSize: 16.0,
               ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+                "Projects:\n",
+                style:TextStyle(
+                  color: Colors.orange,
+                  fontSize: height * 0.035,
+                )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    flex:50,
+                    child:Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Web',style: TextStyle(color: Colors.white,fontSize: height * 0.025),),
+                        GestureDetector(
+                          onTap: ()async{
+                            const url = 'https://capeforhealth.com';
+                            if (await canLaunch(url)) {
+                              await launch(url,
+                              forceSafariVC: true,
+                              enableJavaScript: true,);
+                              } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          child:Text('capeforhealth.com',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),) ,
+                        ),
+                        Text('Mobile',style: TextStyle(color: Colors.white,fontSize: height * 0.025),),
+                        GestureDetector(
+                          child: Text('https://play.google.com/store/apps/details?id=cape.com.capeflutter',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+                          onTap: ()async{
+                            const url = 'https://play.google.com/store/apps/details?id=cape.com.capeflutter';
+                            if (await canLaunch(url)) {
+                              await launch(url,
+                              forceSafariVC: true,
+                              enableJavaScript: true,);
+                              } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                        ),
+                        GestureDetector(
+                          child: Text('https://play.google.com/store/apps/details?id=com.bernama.reporter',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+                          onTap: ()async{
+                            const url = 'https://play.google.com/store/apps/details?id=com.bernama.reporter';
+                            if (await canLaunch(url)) {
+                              await launch(url,
+                              forceSafariVC: true,
+                              enableJavaScript: true,);
+                              } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                        ),
+                        GestureDetector(
+                          child:Text('https://play.google.com/store/apps/details?id=com.petbiotech.petbiotech_app',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+                          onTap: ()async{
+                            const url = 'https://play.google.com/store/apps/details?id=com.petbiotech.petbiotech_app';
+                            if (await canLaunch(url)) {
+                              await launch(url,
+                              forceSafariVC: true,
+                              enableJavaScript: true,);
+                              } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                        )
+                      ],
+                    )
+                ),
+                Expanded(
+                flex:50,
+                    child:Container(
+                      alignment: Alignment.bottomRight,
+                      // height: height/2,
+                      width: width,
+                      child: Image.asset('assets/3.gif',fit: BoxFit.fitWidth,),
+                    ),
+                ),
+              ],
             ),
           ],
         )

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class ContactScreen extends StatefulWidget {
   @override
@@ -13,10 +14,10 @@ class _ContactScreenState extends State<ContactScreen> {
   String _capeContactUs = 'assets/contact_us_cape.png';
   String google_url = "www.google.com";
 
-  _launchEmail() async {
-    launch(
-        google_url);
-  }
+  // _launchEmail() async {
+  //   launch(
+  //       google_url);
+  // }
 
   Container contactUsCard() {
     double height = MediaQuery.of(context).size.height;
@@ -41,6 +42,22 @@ class _ContactScreenState extends State<ContactScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // Row(
+          //   children: <Widget>[
+          //     Icon(
+          //       FontAwesomeIcons.phone,
+          //       color: Colors.pinkAccent,
+          //       size: 40,
+          //     ),
+          //     SizedBox(
+          //       width: 10,
+          //     ),
+          //     Text('8639094240',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+          //   ],
+          // ),
+          // SizedBox(
+          //   height: height * 0.05,
+          // ),
           Row(
             children: <Widget>[
               Icon(
@@ -51,7 +68,20 @@ class _ContactScreenState extends State<ContactScreen> {
               SizedBox(
                 width: 10,
               ),
-              Text('instagram.com/balumahendra592',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+              GestureDetector(
+                child:Text('instagram.com/balumahendra592',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+                onTap: ()async{
+                  const url = 'https://instagram.com/balumahendra592';
+                  if (await canLaunch(url)) {
+                    await launch(url,
+                      forceSafariVC: true,
+                      forceWebView: true,
+                      enableJavaScript: true,);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+              )
             ],
           ),
           SizedBox(
@@ -67,7 +97,20 @@ class _ContactScreenState extends State<ContactScreen> {
               SizedBox(
                 width: 10,
               ),
-              Text('twitter.com/regetibalamura1',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+              GestureDetector(
+                child:Text('twitter.com/regetibalamura1',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+                onTap: ()async{
+                  const url = 'https://twitter.com/regetibalamura1';
+                  if (await canLaunch(url)) {
+                    await launch(url,
+                      forceSafariVC: true,
+                      forceWebView: true,
+                      enableJavaScript: true,);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+              )
             ],
           ),
           SizedBox(
@@ -83,34 +126,54 @@ class _ContactScreenState extends State<ContactScreen> {
               SizedBox(
                 width: 10,
               ),
-              Text('facebook.com/mahendra.badly',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+              GestureDetector(
+                child:Text('facebook.com/mahendra.badly',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+                onTap: ()async{
+                  const url = 'https://facebook.com/mahendra.badly';
+                  if (await canLaunch(url)) {
+                    await launch(url,
+                      forceSafariVC: true,
+                      forceWebView: true,
+                      enableJavaScript: true,);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+              )
             ],
           ),
           SizedBox(
             height: height * 0.05,
           ),
-          Row(
-            children: <Widget>[
-              Icon(
-                FontAwesomeIcons.google,
-                color: Colors.red,
-                size: 40,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              // InkWell(
-              //   onTap:  _launchEmail(),
-              //   child: Text('Open email',style: TextStyle(
-              //       color: Colors.white
-              //   ),),
-              // ),
-              Text(' balumahendra592@gmail.com',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
-            ],
-          ),
-          SizedBox(
-            height: height * 0.05,
-          ),
+          // Row(
+          //   children: <Widget>[
+          //     Icon(
+          //       FontAwesomeIcons.google,
+          //       color: Colors.red,
+          //       size: 40,
+          //     ),
+          //     SizedBox(
+          //       width: 10,
+          //     ),
+          //     // GestureDetector(
+          //     //   child: Text('balumahendra592@gmail.com',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+          //     //   onTap: ()async{
+          //     //     const url = 'https://mailto:balumahendra592@gmail.com?subject=Greetings&body=Hello%20World';
+          //     //     if (await canLaunch(url)) {
+          //     //       await launch(url,
+          //     //         forceSafariVC: true,
+          //     //         forceWebView: true,
+          //     //         enableJavaScript: true,);
+          //     //     } else {
+          //     //       throw 'Could not launch $url';
+          //     //     }
+          //     //   },
+          //     // )
+          //   ],
+          // ),
+          // SizedBox(
+          //   height: height * 0.05,
+          // ),
           Row(
             children: <Widget>[
               Icon(
@@ -121,7 +184,20 @@ class _ContactScreenState extends State<ContactScreen> {
               SizedBox(
                 width: 10,
               ),
-              Text('github.com/balumahendra592',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+              GestureDetector(
+                child:Text('github.com/balumahendra592',style: TextStyle(color: Colors.blue,fontSize: height * 0.025),),
+                onTap: ()async{
+                  const url = 'https://github.com/balumahendra592';
+                  if (await canLaunch(url)) {
+                    await launch(url,
+                      forceSafariVC: true,
+                      forceWebView: true,
+                      enableJavaScript: true,);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+              ),
             ],
           ),
         ],
@@ -137,7 +213,7 @@ class _ContactScreenState extends State<ContactScreen> {
     return Scaffold(
       appBar: AppBar(
 
-          title: Text('About',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+          title: Text('Contact',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
       ),
       backgroundColor: Colors.black,
       body: SingleChildScrollView(

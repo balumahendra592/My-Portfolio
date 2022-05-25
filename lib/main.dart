@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
           BottomNavigationBarItem(icon: Icon(Icons.laptop_chromebook), title: Text("Skills")),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("About")),
+          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("Contact")),
         ],
       ),
       body:SafeArea(

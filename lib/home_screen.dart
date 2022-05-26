@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/about_screen.dart';
@@ -26,7 +27,7 @@ class _HomeSreenState extends State<HomeSreen> {
           Container(
           height: height,
           width: width,
-            child: Image.asset('assets/2.jpg',fit: BoxFit.fitWidth,),
+            child: Image.asset('assets/2.jpg',fit: BoxFit.cover,),
           ),
           Row(
             children: [
@@ -100,7 +101,7 @@ class _HomeSreenState extends State<HomeSreen> {
                     SizedBox(
                       height: height * 0.20,
                     ),
-                    ElevatedButton(
+                    kIsWeb?Text(''):ElevatedButton(
                         onPressed: () async{
                           const url = 'https://github.com/balumahendra592/balumahendra592/raw/main/BALA-MURALI-KRISHNA-REGETI(1).pdf';
                           if (await canLaunch(url)) {
@@ -172,17 +173,16 @@ class _HomeSreenState extends State<HomeSreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-
-          title: Text('Home',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
-      ),
+      // body: Text('hi'),
+      // appBar: AppBar(
+      //
+      //     title: Text('Home',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+      // ),
       body: Container(
         color: Colors.black,
-        child: SingleChildScrollView(
-          physics: ScrollPhysics(),
-          child: Center(
+        child: Center(
+          // child: Text('hi'),
             child: _body()
-          ),
         ),
       ),
     );

@@ -211,10 +211,10 @@ class _ContactScreenState extends State<ContactScreen> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-
-          title: Text('Contact',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
-      ),
+      // appBar: AppBar(
+      //
+      //     title: Text('Contact',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+      // ),
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         physics: ScrollPhysics(),

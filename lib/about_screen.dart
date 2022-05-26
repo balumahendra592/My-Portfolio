@@ -186,10 +186,10 @@ class _AboutScreenState extends State<AboutScreen> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-
-          title: Text('Skills',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
-      ),
+      // appBar: AppBar(
+      //
+      //     title: Text('Skills',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+      // ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
         child: Stack(

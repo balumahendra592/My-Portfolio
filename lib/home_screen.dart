@@ -27,6 +27,9 @@ class _HomeSreenState extends State<HomeSreen> {
           Container(
           height: height,
           width: width,
+
+
+
             child: Image.asset('assets/2.jpg',fit: BoxFit.cover,),
           ),
           Row(
